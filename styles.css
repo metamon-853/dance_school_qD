@@ -107,6 +107,134 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* 新規開講お知らせ */
+.announcement {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+}
+
+.announcement-banner {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.announcement-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #ff6b6b, #ee5a6f, #ff6b6b);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.announcement-content {
+    position: relative;
+    z-index: 1;
+}
+
+.announcement-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.announcement-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.announcement-text {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 0 0 2rem 0;
+}
+
+.trial-session {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 2px solid #f0f0f0;
+}
+
+.trial-title {
+    font-size: 1.8rem;
+    color: #ff6b6b;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.trial-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: left;
+    margin-top: 1.5rem;
+}
+
+.trial-detail-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #ff6b6b;
+}
+
+.trial-detail-item strong {
+    display: block;
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+}
+
+.trial-detail-item p {
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.trial-detail-item .address {
+    font-size: 0.95rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
 /* セクション共通 */
 section {
     padding: 80px 20px;
@@ -180,35 +308,378 @@ section {
 }
 
 /* レッスン */
-.classes-grid {
+.lesson-info {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.lesson-target {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem 3rem;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.lesson-target strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.lesson-target p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.schools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.school-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid #667eea;
+}
+
+.school-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.school-name {
+    font-size: 1.8rem;
+    color: #667eea;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.school-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.school-detail-item {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.school-detail-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.school-detail-item strong {
+    display: block;
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.school-detail-item p {
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.school-detail-item .sub-location {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 0.3rem;
+    font-style: italic;
+}
+
+.school-detail-item.highlight {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.school-detail-item.highlight p {
+    color: #ff6b6b;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* 料金設定 */
+.pricing {
+    background: #f8f9fa;
+}
+
+.pricing-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.pricing-item {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.pricing-item strong {
+    display: block;
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.pricing-item .price {
+    font-size: 2.5rem;
+    color: #667eea;
+    font-weight: bold;
+    margin: 0;
+}
+
+.payment-methods {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.payment-methods h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.payment-options {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.payment-option {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* イベント */
+.events {
+    background: #f8f9fa;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.event-season {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.event-season.summer {
+    background: linear-gradient(135deg, #ff9a56 0%, #ff6b6b 100%);
+}
+
+.event-season.autumn {
+    background: linear-gradient(135deg, #ffa726 0%, #fb8c00 100%);
+}
+
+.event-season.winter {
+    background: linear-gradient(135deg, #42a5f5 0%, #1e88e5 100%);
+}
+
+.event-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin: 0 0 1.5rem 0;
+    font-weight: bold;
+}
+
+.event-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.event-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    aspect-ratio: 1;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.event-image:hover {
+    transform: scale(1.05);
+}
+
+/* 講師紹介 */
+.instructor {
+    background: #f8f9fa;
+}
+
+.instructor-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.instructor-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.instructor-image-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 2.5rem;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.instructor-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.instructor-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.instructor-header h3 {
+    font-size: 2rem;
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.instructor-age {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.instructor-info {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
 }
 
-.class-card {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 2.5rem;
-    border-radius: 15px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+.instructor-detail {
+    margin-bottom: 1.5rem;
 }
 
-.class-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+.instructor-detail strong {
+    display: block;
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.class-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+.instructor-detail p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
 }
 
-.class-card p {
-    opacity: 0.9;
-    line-height: 1.6;
+.instagram-link {
+    display: inline-block;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    transition: color 0.3s;
+}
+
+.instagram-link:hover {
+    color: #764ba2;
+}
+
+.career-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.career-list li {
+    color: #666;
+    line-height: 2;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.career-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
 }
 
 /* お問い合わせ */
@@ -305,8 +776,35 @@ section {
 .footer {
     background: #333;
     color: white;
-    text-align: center;
     padding: 2rem 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover {
+    opacity: 0.8;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* アニメーション */
@@ -344,12 +842,79 @@ section {
         grid-template-columns: 1fr;
     }
 
-    .classes-grid {
+    .schools-grid {
         grid-template-columns: 1fr;
+    }
+
+    .lesson-target {
+        padding: 1.2rem 2rem;
+    }
+
+    .lesson-target p {
+        font-size: 1.1rem;
+    }
+
+    .pricing-card {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .pricing-item .price {
+        font-size: 2rem;
+    }
+
+    .payment-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .payment-option {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card {
+        padding: 2rem;
+    }
+
+    .event-title {
+        font-size: 1.5rem;
+    }
+
+    .event-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .instructor-card {
+        padding: 2rem;
     }
 
     .section-title {
         font-size: 2rem;
+    }
+
+    .announcement-title {
+        font-size: 1.8rem;
+    }
+
+    .announcement-text {
+        font-size: 1rem;
+    }
+
+    .announcement-banner {
+        padding: 2rem;
+    }
+
+    .trial-details {
+        grid-template-columns: 1fr;
+    }
+
+    .trial-title {
+        font-size: 1.5rem;
     }
 }
 
@@ -370,6 +935,11 @@ section {
 
     section {
         padding: 60px 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
