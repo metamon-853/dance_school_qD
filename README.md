@@ -10,6 +10,25 @@
 - 連絡先情報の掲載
 - Googleフォームによるお問い合わせフォーム
 
+## プロジェクト構造
+
+```
+qd_dance_school/
+├── images/
+│   ├── instructor/          # 講師の画像
+│   │   └── instructor-main.jpg
+│   ├── events/             # イベント画像
+│   │   ├── summer/         # 夏イベント（海）
+│   │   ├── halloween/      # ハロウィンイベント
+│   │   └── christmas/      # クリスマスイベント
+│   └── hero/               # ヒーローセクション背景画像
+│       └── hero-background.jpg
+├── index.html
+├── styles.css
+├── script.js
+└── README.md
+```
+
 ## セットアップ
 
 1. このリポジトリをクローンまたはダウンロードします
@@ -30,6 +49,17 @@
 ### 連絡先情報の変更
 
 `index.html`の連絡先セクション（`#contact`内）の情報を編集してください。
+
+### 画像の追加・変更
+
+画像は以下のフォルダ構造で管理されています：
+- `images/instructor/` - 講師の画像
+- `images/events/summer/` - 夏イベントの画像
+- `images/events/halloween/` - ハロウィンイベントの画像
+- `images/events/christmas/` - クリスマスイベントの画像
+- `images/hero/` - ヒーローセクションの背景画像
+
+新しい画像を追加する場合は、適切なフォルダに配置し、`index.html`または`styles.css`でパスを更新してください。
 
 ### 色の変更
 
