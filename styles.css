@@ -868,32 +868,42 @@ section {
 }
 
 /* フォームスタイル */
-.form {
+.contact-form .form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    margin: 0;
+    padding: 0;
 }
 
-.form-group {
+.contact-form .form-group {
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1.5rem;
 }
 
-.form-group label {
+.contact-form .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.contact-form .form-group label {
     color: #333;
     font-weight: 500;
     margin-bottom: 0.5rem;
     font-size: 1rem;
+    display: block;
 }
 
-.form-group .required {
+.contact-form .form-group .required {
     color: #ff6b6b;
     margin-left: 0.2rem;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.contact-form .form-group input,
+.contact-form .form-group select,
+.contact-form .form-group textarea {
     padding: 0.9rem 1.2rem;
     border: 2px solid #e0e0e0;
     border-radius: 8px;
@@ -902,36 +912,52 @@ section {
     transition: all 0.3s ease;
     background: white;
     color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.contact-form .form-group input:focus,
+.contact-form .form-group select:focus,
+.contact-form .form-group textarea:focus {
     outline: none;
     border-color: #667eea;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
-.form-group input:hover,
-.form-group select:hover,
-.form-group textarea:hover {
+.contact-form .form-group input:hover,
+.contact-form .form-group select:hover,
+.contact-form .form-group textarea:hover {
     border-color: #b0b0b0;
 }
 
-.form-group textarea {
+.contact-form .form-group textarea {
     resize: vertical;
     min-height: 120px;
 }
 
-.form-group button[type="submit"] {
+.contact-form .form-group button[type="submit"] {
     width: 100%;
     margin-top: 0.5rem;
     cursor: pointer;
     border: none;
+    display: inline-block;
+    background: white;
+    color: #667eea;
+    padding: 18px 48px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.5px;
 }
 
-.form-group button[type="submit"]:hover {
+.contact-form .form-group button[type="submit"]:hover {
     transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    background: #f8f9fa;
 }
 
 /* フッター */
@@ -1058,6 +1084,25 @@ section {
 
     .contact-content {
         grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 2rem;
+    }
+
+    .contact-form .form {
+        gap: 1.2rem;
+    }
+
+    .contact-form .form-group {
+        margin-bottom: 1.2rem;
+    }
+
+    .contact-form .form-group input,
+    .contact-form .form-group select,
+    .contact-form .form-group textarea {
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
     }
 
     .schools-grid {
