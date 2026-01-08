@@ -11,13 +11,17 @@
     <header class="header">
         <nav class="nav">
             <div class="logo">
-                <h1>ダンススクールqD</h1>
+                <a href="#home" class="logo-link">
+                    <h1>ダンススクールqD</h1>
+                </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">ホーム</a></li>
+                <li><a href="#announcement">お知らせ</a></li>
                 <li><a href="#about">スクールについて</a></li>
-                <li><a href="#instructor">講師紹介</a></li>
                 <li><a href="#classes">レッスン</a></li>
+                <li><a href="#instructor">講師紹介</a></li>
+                <li><a href="#events">イベント</a></li>
+                <li><a href="#pricing">料金設定</a></li>
                 <li><a href="#contact">お問い合わせ</a></li>
             </ul>
         </nav>
@@ -32,17 +36,18 @@
         </div>
     </section>
 
-    <!-- 新規開講お知らせ -->
-    <section class="announcement">
+    <!-- お知らせ -->
+    <section id="announcement" class="announcement">
         <div class="container">
+            <h2 class="section-title">お知らせ</h2>
             <div class="announcement-banner">
                 <div class="announcement-content">
                     <span class="announcement-badge">NEW</span>
-                    <h2 class="announcement-title">✨新規開講✨<br>博多スクール</h2>
+                    <h3 class="announcement-title">✨新規開講✨<br>博多スクール</h3>
                     <p class="announcement-text">新しいスクールが博多にオープンしました！</p>
                     
                     <div class="trial-session">
-                        <h3 class="trial-title">体験会開催</h3>
+                        <h4 class="trial-title">体験会開催</h4>
                         <div class="trial-details">
                             <div class="trial-detail-item">
                                 <strong>日時</strong>
@@ -86,6 +91,60 @@
                     <div class="feature">
                         <h3>柔軟なスケジュール</h3>
                         <p>あなたのライフスタイルに合わせて参加可能</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- レッスン -->
+    <section id="classes" class="classes">
+        <div class="container">
+            <h2 class="section-title">レッスン詳細</h2>
+            <div class="lesson-info">
+                <div class="lesson-target">
+                    <strong>対象年齢</strong>
+                    <p>小学1年生〜大人</p>
+                </div>
+            </div>
+            
+            <div class="schools-grid">
+                <div class="school-card">
+                    <h3 class="school-name">大濠校</h3>
+                    <div class="school-details">
+                        <div class="school-detail-item">
+                            <strong>開催日</strong>
+                            <p>第2・4土曜日（変動あり）</p>
+                        </div>
+                        <div class="school-detail-item">
+                            <strong>場所</strong>
+                            <p>中央区体育館　健康体力相談室</p>
+                            <p class="sub-location">※使えない場合→大濠クレア Red・Blue</p>
+                        </div>
+                        <div class="school-detail-item">
+                            <strong>時間</strong>
+                            <p>13:00〜15:00</p>
+                        </div>
+                        <div class="school-detail-item highlight">
+                            <p>⭐体験は無料✨</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="school-card">
+                    <h3 class="school-name">金山校</h3>
+                    <div class="school-details">
+                        <div class="school-detail-item">
+                            <strong>場所</strong>
+                            <p>マサコ茶山バレエスタジオ</p>
+                        </div>
+                        <div class="school-detail-item">
+                            <strong>時間</strong>
+                            <p>13:00〜14:00（変動あり）</p>
+                        </div>
+                        <div class="school-detail-item highlight">
+                            <p>⭐体験は無料✨</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -159,86 +218,6 @@
         </div>
     </section>
 
-    <!-- レッスン -->
-    <section id="classes" class="classes">
-        <div class="container">
-            <h2 class="section-title">レッスン詳細</h2>
-            <div class="lesson-info">
-                <div class="lesson-target">
-                    <strong>対象年齢</strong>
-                    <p>小学1年生〜大人</p>
-                </div>
-            </div>
-            
-            <div class="schools-grid">
-                <div class="school-card">
-                    <h3 class="school-name">大濠校</h3>
-                    <div class="school-details">
-                        <div class="school-detail-item">
-                            <strong>開催日</strong>
-                            <p>第2・4土曜日（変動あり）</p>
-                        </div>
-                        <div class="school-detail-item">
-                            <strong>場所</strong>
-                            <p>中央区体育館　健康体力相談室</p>
-                            <p class="sub-location">※使えない場合→大濠クレア Red・Blue</p>
-                        </div>
-                        <div class="school-detail-item">
-                            <strong>時間</strong>
-                            <p>13:00〜15:00</p>
-                        </div>
-                        <div class="school-detail-item highlight">
-                            <p>⭐体験は無料✨</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="school-card">
-                    <h3 class="school-name">金山校</h3>
-                    <div class="school-details">
-                        <div class="school-detail-item">
-                            <strong>場所</strong>
-                            <p>マサコ茶山バレエスタジオ</p>
-                        </div>
-                        <div class="school-detail-item">
-                            <strong>時間</strong>
-                            <p>13:00〜14:00（変動あり）</p>
-                        </div>
-                        <div class="school-detail-item highlight">
-                            <p>⭐体験は無料✨</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 料金設定 -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2 class="section-title">料金設定</h2>
-            <div class="pricing-content">
-                <div class="pricing-card">
-                    <div class="pricing-item">
-                        <strong>入会費</strong>
-                        <p class="price">5,000円</p>
-                    </div>
-                    <div class="pricing-item">
-                        <strong>月謝</strong>
-                        <p class="price">6,600円</p>
-                    </div>
-                </div>
-                <div class="payment-methods">
-                    <h3>支払い方法</h3>
-                    <div class="payment-options">
-                        <span class="payment-option">現金</span>
-                        <span class="payment-option">PayPay</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- イベント -->
     <section id="events" class="events">
         <div class="container">
@@ -286,6 +265,32 @@
                         <img src="images/events/christmas/christmas-2.jpg" alt="クリスマスイベント写真2" class="event-image">
                         <img src="images/events/christmas/christmas-3.jpg" alt="クリスマスイベント写真3" class="event-image">
                         <img src="images/events/christmas/christmas-4.jpg" alt="クリスマスイベント写真4" class="event-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 料金設定 -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">料金設定</h2>
+            <div class="pricing-content">
+                <div class="pricing-card">
+                    <div class="pricing-item">
+                        <strong>入会費</strong>
+                        <p class="price">5,000円</p>
+                    </div>
+                    <div class="pricing-item">
+                        <strong>月謝</strong>
+                        <p class="price">6,600円</p>
+                    </div>
+                </div>
+                <div class="payment-methods">
+                    <h3>支払い方法</h3>
+                    <div class="payment-options">
+                        <span class="payment-option">現金</span>
+                        <span class="payment-option">PayPay</span>
                     </div>
                 </div>
             </div>
