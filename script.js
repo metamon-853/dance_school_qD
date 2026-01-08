@@ -68,5 +68,101 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         observer.observe(el);
     });
+
+    // お問い合わせフォームの処理
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleFormSubmit);
+    }
 });
+
+// フォーム送信処理
+function handleFormSubmit(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const formData = new FormData(form);
+    const submitButton = form.querySelector('button[type="submit"]');
+    
+    // バリデーション
+    if (!validateForm(form)) {
+        return;
+    }
+    
+    // 送信ボタンを無効化
+    submitButton.disabled = true;
+    submitButton.textContent = '送信中...';
+    
+    // ここで実際の送信処理を実装
+    // 例：メール送信サービス（Formspree、EmailJSなど）を使用
+    // または、サーバーサイドのAPIエンドポイントに送信
+    
+    // デモ用：送信成功のメッセージを表示
+    setTimeout(() => {
+        alert('お問い合わせありがとうございます。\n内容を確認次第、ご連絡いたします。');
+        form.reset();
+        submitButton.disabled = false;
+        submitButton.textContent = '送信する';
+    }, 1000);
+    
+    // 実際の送信処理の例（コメントアウト）:
+    /*
+    fetch('YOUR_API_ENDPOINT', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert('お問い合わせありがとうございます。\n内容を確認次第、ご連絡いたします。');
+        form.reset();
+        submitButton.disabled = false;
+        submitButton.textContent = '送信する';
+    })
+    .catch(error => {
+        alert('送信に失敗しました。もう一度お試しください。');
+        submitButton.disabled = false;
+        submitButton.textContent = '送信する';
+    });
+    */
+}
+
+// フォームバリデーション
+function validateForm(form) {
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            isValid = false;
+            field.style.borderColor = '#ff6b6b';
+            
+            // エラー表示をリセット
+            setTimeout(() => {
+                field.style.borderColor = '#e0e0e0';
+            }, 3000);
+        } else {
+            field.style.borderColor = '#e0e0e0';
+        }
+    });
+    
+    // メールアドレスの形式チェック
+    const emailField = form.querySelector('input[type="email"]');
+    if (emailField && emailField.value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailField.value)) {
+            isValid = false;
+            emailField.style.borderColor = '#ff6b6b';
+            alert('正しいメールアドレスを入力してください。');
+            setTimeout(() => {
+                emailField.style.borderColor = '#e0e0e0';
+            }, 3000);
+        }
+    }
+    
+    if (!isValid) {
+        alert('必須項目を入力してください。');
+    }
+    
+    return isValid;
+}
 
