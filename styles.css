@@ -181,9 +181,15 @@ body {
     background: #ffffff;
 }
 
-.announcement-banner {
-    max-width: 1000px;
+.announcements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
     margin: 0 auto;
+}
+
+.announcement-banner {
     background: white;
     border-radius: 24px;
     padding: 4rem;
@@ -302,6 +308,35 @@ body {
     font-size: 0.95rem;
     color: #888;
     margin-top: 0.5rem;
+}
+
+.announcement-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    text-align: left;
+    margin: 1.5rem 0;
+}
+
+.announcement-detail-item {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+}
+
+.announcement-detail-item strong {
+    display: block;
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+}
+
+.announcement-detail-item p {
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
 }
 
 /* セクション共通 */
@@ -504,6 +539,65 @@ section {
     color: #ff6b6b;
     font-weight: bold;
     font-size: 1.1rem;
+    margin: 0;
+}
+
+/* 口コミ */
+.testimonials {
+    background: #ffffff;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: #f8f9fa;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+}
+
+.testimonial-content {
+    flex: 1;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-text {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.testimonial-author {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 1.5rem;
+}
+
+.testimonial-name {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 0 0.3rem 0;
+}
+
+.testimonial-age {
+    color: #888;
+    font-size: 0.9rem;
     margin: 0;
 }
 
@@ -795,6 +889,55 @@ section {
     left: 0;
     color: #667eea;
     font-weight: bold;
+}
+
+/* よくある質問 */
+.faq {
+    background: #f8f9fa;
+}
+
+.faq-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.faq-question {
+    margin-bottom: 1.5rem;
+}
+
+.faq-question h3 {
+    color: #667eea;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.faq-answer {
+    color: #555;
+    line-height: 1.8;
+}
+
+.faq-answer p {
+    margin-bottom: 0.8rem;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
 }
 
 /* お問い合わせ */
@@ -1126,6 +1269,19 @@ section {
         font-size: 2rem;
     }
 
+    .faq-item {
+        padding: 1.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .faq-question h3 {
+        font-size: 1.1rem;
+    }
+
+    .faq-answer {
+        font-size: 0.95rem;
+    }
+
     .payment-options {
         flex-direction: column;
         align-items: center;
@@ -1141,6 +1297,14 @@ section {
     }
 
     .event-card {
+        padding: 2rem;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-card {
         padding: 2rem;
     }
 
@@ -1173,8 +1337,16 @@ section {
         font-size: 1rem;
     }
 
+    .announcements-grid {
+        grid-template-columns: 1fr;
+    }
+
     .announcement-banner {
         padding: 2rem;
+    }
+
+    .announcement-details {
+        grid-template-columns: 1fr;
     }
 
     .trial-details {
