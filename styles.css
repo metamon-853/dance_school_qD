@@ -780,6 +780,20 @@ section {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+.event-video {
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+.event-video-player {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background-color: #000;
+}
+
 /* 講師紹介 */
 .instructor {
     background: #f8f9fa;
