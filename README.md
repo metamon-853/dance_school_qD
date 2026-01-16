@@ -78,4 +78,4 @@ qd_dance_school/
 
 このプロジェクトはMITライセンスの下で公開されています。
 
-あいうえお。github actionsのためのテストコミットのための一行。aaa
+あいうえお。github actionsのためのテストコミットのための一行。aaabbb
