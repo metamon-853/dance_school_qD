@@ -39,37 +39,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// スクロール時のヘッダー表示制御
-let lastScroll = 0;
-let scrollThreshold = 100; // この値以上スクロールしたらヘッダーを表示/非表示
-const header = document.querySelector('.header');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    // トップ付近では常に表示
-    if (currentScroll < 50) {
-        header.classList.add('visible');
-    } else {
-        // スクロール方向を検知
-        if (currentScroll > lastScroll && currentScroll > scrollThreshold) {
-            // 下にスクロール中 → 非表示
-            header.classList.remove('visible');
-        } else if (currentScroll < lastScroll) {
-            // 上にスクロール中 → 表示
-            header.classList.add('visible');
-        }
-    }
-    
-    // シャドウの調整
-    if (currentScroll > 100) {
-        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
-    } else {
-        header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    }
-    
-    lastScroll = currentScroll;
-});
 
 // フェードインアニメーション（スクロール時）
 const observerOptions = {
